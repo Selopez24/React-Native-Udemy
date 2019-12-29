@@ -1,5 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
-import { View, Text, StyleSheet, Alert, FlatList } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Alert,
+  FlatList,
+  Dimensions
+} from "react-native";
 import NumberContainer from "../components/NumberContainer";
 import Card from "../components/Card";
 import MainButton from "../components/MainButton";
@@ -100,9 +107,10 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: "row",
     justifyContent: "space-around",
-    marginTop: 20,
-    width: 400,
-    maxWidth: "80%"
+    marginTop: Dimensions.get("window").height > 600 ? 20 : 10,
+    minWidth: 300,
+    width: "80%",
+    maxWidth: "95%"
   },
   listItem: {
     borderColor: "#ccc",
